@@ -1,11 +1,11 @@
 :root {
-  --black: #020303;
+  --black: rgb(67, 114, 67);
   --dark-grey: #171c1c;
   --light-grey: #a7b9b7;
   --primary: #5cc1bb;
-  --primary-dark: #41aaa3;
+  --primary-dark: #8acbc6;
   --secondary: hsl(15deg 100% 62%);
-  --secondary-light: hsl(15deg 100% 70%);
+  --secondary-light: hsl(30, 54%, 72%);
   --text-color: #f5fffe;
   --space: 16px;
   --font-size: 18px;
@@ -18,7 +18,7 @@ body {
   line-height: 1.5;
   padding: 0;
   margin: 0;
-  font-family: helvetica;
+  font-family: gibson;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -92,6 +92,7 @@ header {
 }
 header a {
   margin: var(--space);
+  text-decoration: none;
 }
 header .site-logo {
   font-size: calc(var(--font-size) * 1.5);
