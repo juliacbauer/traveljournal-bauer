@@ -1,8 +1,12 @@
 <header>
   <a class="site-logo" href="/">
-    Auth Example! 🕵️
+    Exploria 🗺️
   </a>
   {{#if isLoggedIn}}
+    <a href="/about">About</a>
+    <a href="/search">Search</a>
+    <a href="/explored">Explored</a>
+    <a href="/unexplored">Unexplored</a>
     <a href="/api/logout">Logout</a>
   {{else}}
     <a href="/login">Login</a>
