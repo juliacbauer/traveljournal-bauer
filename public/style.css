@@ -32,6 +32,7 @@ main {
   background-color: var(--black);
   padding: var(--space) calc(var(--space) * 3);
   text-align: center;
+  margin-bottom: 100px;
 }
 
 main,
@@ -139,18 +140,10 @@ header .site-logo {
   }
 }
 
-.travelsearch {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 50px;
-}
-
-.searchform {
-  padding-bottom: 40px;
-  padding-top: 20px;
-}
-
 .aboutapp {
   text-align: left;
+}
+
+.endabout {
+  font-style: italic;
 }
