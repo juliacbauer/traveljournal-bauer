@@ -2,6 +2,6 @@
 <main>
   <h1>Welcome to Exploria 🗺️</h1>
   <p>Currently, you are {{#unless isLoggedIn}} NOT {{/unless}} logged in.</p>
-  <p>You should {{#unless isLoggedIn}}NOT{{/unless}} be able to access <a href="/private">this page</a>.</p>
+  <p>You should {{#unless isLoggedIn}}NOT{{/unless}} be able to access your <a class="privatelink" href="/explored">Explored List</a> and your <a class="privatelink" href="/unexplored">Unexplored List</a>.</p>
   <p>Use the header above to {{#if isLoggedIn}} logout and the nav bar to explore the site{{else}} login or create an account{{/if}}.</p>
 </main>

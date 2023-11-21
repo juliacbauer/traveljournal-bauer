@@ -147,3 +147,7 @@ header .site-logo {
 .endabout {
   font-style: italic;
 }
+
+.privatelink {
+  text-decoration: none;
+}
