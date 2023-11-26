@@ -21,8 +21,8 @@ const CitySchema = new Schema({
   tip: {
     type: String,
     required: true,
-  },
-
+  }
+  
 });
 
 module.exports = models.City || model("City", CitySchema);
