@@ -1,26 +1,45 @@
 {{> header}}
 <main>
     <h1>Destination Search 🔍</h1>
-    <p>Quote of the day: "{{oneQuote}}"</p>
-    <p>Click on a location to learn about the top 15 travel desinations in the U.S.</p>
-    <h3>Destinations:</h3>
-    <div class="centerlist">
-    <ol>
-        <li><a class="privatelink" href="#">New York City, New York</a></li>
-        <li><a class="privatelink" href="#">San Francisco, California</a></li>
-        <li><a class="privatelink" href="#">Honolulu, Hawaii</a></li>
-        <li><a class="privatelink" href="#">Chicago, Illinois</a></li>
-        <li><a class="privatelink" href="#">Los Angeles, California</a></li>
-        <li><a class="privatelink" href="#">Seattle, Washington</a></li>
-        <li><a class="privatelink" href="#">Las Vegas, Nevada</a></li>
-        <li><a class="privatelink" href="#">Washington, D.C.</a></li>
-        <li><a class="privatelink" href="#">New Orleans, Louisiana</a></li>
-        <li><a class="privatelink" href="#">Miami, Florida</a></li>
-        <li><a class="privatelink" href="#">Boston, Massachusetts</a></li>
-        <li><a class="privatelink" href="#">San Diego, California</a></li>
-        <li><a class="privatelink" href="#">Portland, Oregon</a></li>
-        <li><a class="privatelink" href="#">Austin, Texas</a></li>
-        <li><a class="privatelink" href="#">Nashville, Tennessee</a></li>
-    </ol>
+    <p>Enjoy this inspirational quote: "{{oneQuote}}"</p>
+    <p>Search one of the following locations to learn about the top 10 travel desinations in the U.S.</p>
+    <div class="list">
+      <ul class="city-list">
+          <li>New York City</li>
+          <li>Honolulu</li>
+          <li>Los Angeles</li>
+          <li>Seattle</li>
+          <li>San Francisco</li>
+          <li>Las Vegas</li>
+          <li>Nashville</li>
+          <li>Miami</li>
+          <li>Portland</li>
+          <li>New Orleans</li>
+      </ul>
     </div>
-</main>
+    <form action="/search" method="GET">
+      <input class="search-form"  type="text" name="city" placeholder="Enter city name">
+      <button class="search-button" type="submit">Search!</button>
+    </form>
+  <h2>Search Results</h2>
+  {{#if query}}
+    {{#if cities.length}}
+       <div class="search-div">
+      {{#each cities}}
+        <div class="info-item">
+          <h3 class="info-name">{{this.name}}</h3>
+          <p>{{this.state}}</p>
+          <div class="info-left">
+          <p>{{this.description}}</p>
+          <p class="info-tip">{{this.tip}}</p>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    {{else}}
+      <p>No cities found. Please enter one of the cities from the list above.</p>
+    {{/if}}
+  {{else}}
+    <p>Enter city name to search!</p>
+  {{/if}}
+  </main>

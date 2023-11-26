@@ -135,12 +135,14 @@ header .site-logo {
   header .site-logo {
     font-size: var(--font-size);
   }
+  /*Make nav bar links smaller for mobile screen */
   header a {
     margin: calc(var(--space) / 2.5);
     font-size: calc(var(--font-size) / 2)
   }
 }
 
+/*Adjusting nav bar link size for different mobile screen sizes */
 @media screen and (min-width: 450px) and (max-width: 700px) {
   header a {
     margin: calc(var(--space) / 2);
@@ -148,23 +150,82 @@ header .site-logo {
   }
 }
 
+/*About page text align*/
 .aboutapp {
   text-align: left;
 }
 
+/*Style for last sentence of About page*/
 .endabout {
   font-style: italic;
 }
 
+/*Get rid of hyperlink underline*/
 .privatelink {
   text-decoration: none;
 }
 
-.centerlist {
+/*Style search bar*/
+.search-form {
+  padding: 6px 11px 6px 11px;
+  border: none;
+  border-radius: 8px;
+}
+
+/*Style search button*/
+.search-button {
+  padding: 6px 11px 6px 11px;
+  background-color: var(--secondary-light);
+  transition: .5s;
+  border: none;
+  border-radius: 8px;
+  margin-left: 5px
+}
+
+/*Search button hover*/
+.search-button:hover {
+  background-color: var(--secondary);
+  transition: .5s;
+  cursor: pointer
+}
+
+/*Style list of cities*/
+.city-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  max-width: 400px;
+  text-align: left;
+}
+
+.list {
+display: flex;
+justify-content: center;
+margin-left: 10px;
+padding-bottom: 20px
+}
+
+/*Style search results*/
+.search-div {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  padding-bottom: 30px;
+  margin-top: -30px;
+}
+
+.info-item {
+  max-width: 350px;
   text-align: left;
-  margin-top: -20px;
-  margin-bottom: 20px;
+}
+
+/*Style city name*/
+.info-name {
+  color: var(--secondary-light);
+  margin-bottom: -5px;
+}
+
+.info-tip {
+  font-style: italic;
 }
