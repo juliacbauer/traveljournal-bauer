@@ -196,7 +196,6 @@ header .site-logo {
   gap: 20px;
   list-style: none;
   padding: 0;
-  max-width: 400px;
   text-align: left;
 }
 
@@ -216,7 +215,7 @@ padding-bottom: 20px
 }
 
 .info-item {
-  max-width: 350px;
+  max-width: 480px;
   text-align: left;
 }
 
@@ -226,7 +225,23 @@ padding-bottom: 20px
   margin-bottom: -5px;
 }
 
+/*Center city and state*/
+.city-state {
+  text-align: center;
+}
+
 /*Style travel tip*/
 .info-tip {
   font-style: italic;
+}
+
+/*Style attractions list*/
+.list-attractions {
+  display: flex;
+  justify-content: center;
+}
+
+.center-list {
+  text-align: left;
+  list-style-position: inside;
 }

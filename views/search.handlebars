@@ -27,10 +27,23 @@
        <div class="search-div">
       {{#each cities}}
         <div class="info-item">
-          <h3 class="info-name">{{this.name}}</h3>
-          <p>{{this.state}}</p>
+          <div class="city-state">
+            <h3 class="info-name">{{this.name}}</h3>
+            <p>State: {{this.state}}</p>
+          </div>
           <div class="info-left">
           <p>{{this.description}}</p>
+          <div class="list-attractions">
+          <ul>
+            <div class="center-list">
+            <li>{{this.attraction1}}</li>
+            <li>{{this.attraction2}}</li>
+            <li>{{this.attraction3}}</li>
+            <li>{{this.attraction4}}</li>
+            <li>{{this.attraction5}}</li>
+            </div>
+          </ul>
+          </div>
           <p class="info-tip">Tip! {{this.tip}}</p>
           </div>
         </div>
