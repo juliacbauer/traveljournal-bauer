@@ -14,6 +14,12 @@ const UserSchema = new Schema(
       minLength: 5,
       maxLength: 20,
     },
+    favorites: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'City'
+      }
+    ]
   },
   {
     methods: {

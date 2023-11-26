@@ -172,8 +172,8 @@ header .site-logo {
   border-radius: 8px;
 }
 
-/*Style search button*/
-.search-button {
+/*Style search page buttons*/
+.search-button, .explore-button, .unexplore-button {
   padding: 6px 11px 6px 11px;
   background-color: var(--secondary-light);
   transition: .5s;
@@ -182,8 +182,22 @@ header .site-logo {
   margin-left: 5px
 }
 
+.explore-button {
+  padding: 6px 19px 6px 19px;
+}
+
+.explore-button {
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.unexplore-button {
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
 /*Search button hover*/
-.search-button:hover {
+.search-button:hover, .explore-button:hover, .unexplore-button:hover {
   background-color: var(--secondary);
   transition: .5s;
   cursor: pointer
@@ -244,4 +258,8 @@ padding-bottom: 20px
 .center-list {
   text-align: left;
   list-style-position: inside;
+}
+
+.button-paragraph {
+  margin-top: -10px;
 }
