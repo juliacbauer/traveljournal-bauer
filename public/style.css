@@ -201,6 +201,17 @@ header .site-logo {
   cursor: pointer
 }
 
+/*Change gif link color on home page*/
+.giflink2 {
+  padding-bottom: 20px;
+}
+
+/*Change home page background color*/
+.homepage {
+  background-color: var(--primary-dark);
+  margin-top: -90px;
+}
+
 /*Style list of cities*/
 .city-list {
   display: grid;
@@ -275,7 +286,21 @@ padding-bottom: 20px
 .results-div {
   display: flex;
   justify-items: center;
-  margin-left: 20px; /* Horizontally center columns */
+  margin-left: 20px;
+}
+
+/*Place home page gif*/
+.home-gif {
+  margin-top: 30px;
+}
+
+.giflink {
+  margin-top: -5px;
+  margin-bottom: -15px;
+}
+
+.giflink-dark {
+  color: var(--secondary);
 }
 
 /*Put city info and weather info into columns*/
@@ -284,14 +309,12 @@ padding-bottom: 20px
   text-align: left;
 }
 
-.search-results {
-  max-width: 60%;
-  margin-right: 50px;
+.search-div {
+  max-width: 75%;
 }
 
 .weather-info {
-  max-width: 40%;
-  margin-left: 50px;
+  max-width: 35%;
   margin-top: -30px
 }
 
@@ -302,25 +325,32 @@ padding-bottom: 20px
   margin-bottom: 40px;
 }
 
+/*Adjust temp section line spacing*/
+.temp-div {
+  line-height: 20px;
+}
+
 /*Create column breakpoints for mobile screens, become one column*/
 @media screen and (max-width: 800px) {
   .results-div {
     display: block;
   }
-  .city-info, .weather-info {
-    max-width: 100%;
-    text-align: left;
-  }
-  .weather-info {
-    margin-left: 0px;
-    margin-top: 0px;
+
+  .search-div, .weather-info {
+    margin-left: -8px;
     text-align: center;
+    max-width: 100%;
   }
+
   .button-paragraph {
     text-align: center;
     margin-top: 40px;
   }
+}
+
+@media screen and (max-width: 960px) {
+/*Trying to center text on mobile*/
   .other-search {
-    margin-left: auto;
+    margin-left: 35%;
   }
 }

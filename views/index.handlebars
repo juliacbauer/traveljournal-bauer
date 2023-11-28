@@ -1,7 +1,7 @@
 {{> header}}
-<main>
+<main class="homepage">
+  <iframe class="home-gif" src="https://giphy.com/embed/3ov9jCKGqeBAUGd596" width="576" height="384" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p class="giflink"><a class="privatelink giflink-dark" href="https://giphy.com/gifs/travel-clouds-plane-3ov9jCKGqeBAUGd596">Gif via GIPHY</a></p>  
   <h1>Welcome to Exploria 🗺️</h1>
-  <p>Currently, you are {{#unless isLoggedIn}} NOT {{/unless}} logged in.</p>
-  <p>You should {{#unless isLoggedIn}}NOT{{/unless}} be able to access your <a class="privatelink" href="/explored">Explored List</a> and your <a class="privatelink" href="/unexplored">Unexplored List</a>.</p>
-  <p>Use the header above to {{#if isLoggedIn}} logout and the nav bar to explore the site{{else}} login or create an account{{/if}}.</p>
+  <p>Hello! Currently, you are {{#unless isLoggedIn}} NOT {{/unless}} logged in.</p>
+  <p>Use the {{#if isLoggedIn}} menu above to explore the site. ✈️{{else}} header above to login or create an account. ✈️{{/if}}</p>
 </main>

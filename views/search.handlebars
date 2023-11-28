@@ -59,9 +59,12 @@
         <p>{{weather.weather.[0].main}}</p>
         <p>There is {{weather.clouds.all}}% cloud coverage</p>
         <h3>Temperature</h3>
-        <p>Currently, it is {{weather.main.temp}} °F</p>
-        <p>It feels like {{weather.main.feels_like}} °F</p>
-        <p>There is a high of {{weather.main.temp_max}} °F and a low of {{weather.main.temp_min}} °F</p>
+        <div class="temp-div">
+          <p>Currently, it is {{weather.main.temp}} °F</p>
+          <p>It feels like {{weather.main.feels_like}} °F</p>
+          <p>There is a high of {{weather.main.temp_max}} °F</p>
+          <p>There is a low of {{weather.main.temp_min}} °F</p>
+        </div>
       {{/if}}
       </div>
     </div>
