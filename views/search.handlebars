@@ -21,41 +21,65 @@
       <input class="search-form"  type="text" name="city" placeholder="Enter city name">
       <button class="search-button" type="submit">Search!</button>
     </form>
-  <h2>Search Results</h2>
-  {{#if query}}
-    {{#if cities.length}}
-       <div class="search-div">
+    <h2>Search Results</h2>
+    <div class="results-div">
+      <div class="city-info">
+    {{#if query}}
+      {{#if cities.length}}
+        <div class="search-div">
       {{#each cities}}
         <div class="info-item">
           <div class="city-state">
             <h3 class="info-name">{{this.name}}</h3>
-            <p>State: {{this.state}}</p>
+            <p>{{this.state}}</p>
           </div>
           <div class="info-left">
-          <p>{{this.description}}</p>
-          <div class="list-attractions">
-          <ul>
-            <div class="center-list">
-            <li>{{this.attraction1}}</li>
-            <li>{{this.attraction2}}</li>
-            <li>{{this.attraction3}}</li>
-            <li>{{this.attraction4}}</li>
-            <li>{{this.attraction5}}</li>
-            </div>
-          </ul>
+            <p>{{this.description}}</p>
+            <div class="list-attractions">
+            <ul>
+              <div class="center-list">
+              <li>{{this.attraction1}}</li>
+              <li>{{this.attraction2}}</li>
+              <li>{{this.attraction3}}</li>
+              <li>{{this.attraction4}}</li>
+              <li>{{this.attraction5}}</li>
+              </div>
+            </ul>
           </div>
-          <p class="info-tip">Tip! {{this.tip}}</p>
+            <p class="info-tip">Tip! {{this.tip}}</p>
           </div>
         </div>
       {{/each}}
+        </div>
+      </div>
+    <div class="weather-info">
+      {{#if weather}}
+        <h3 class="info-name">Weather</h3>
+        <img src="https://openweathermap.org/img/wn/{{weather.weather.[0].icon}}@2x.png" alt="Weather Icon">
+        <p>{{weather.weather.[0].main}}</p>
+        <p>There is {{weather.clouds.all}}% cloud coverage</p>
+        <h3>Temperature</h3>
+        <p>Currently, it is {{weather.main.temp}} °F</p>
+        <p>It feels like {{weather.main.feels_like}} °F</p>
+        <p>There is a high of {{weather.main.temp_max}} °F and a low of {{weather.main.temp_min}} °F</p>
+      {{/if}}
+      </div>
     </div>
     <p class="button-paragraph">Add this city to your Explored List or Unexplored List using the buttons below!</p>
-    <button class="explore-button" onclick="">Explored List</button>
-    <button class="unexplore-button" onclick="">Unexplored List</button>
+    <div class="result-buttons">
+      <form action="/add-to-explored/{{this._id}}" method="post">
+        <input type="hidden" name="cityId" value="{{this._id}}">
+        <button class="explore-button" onclick="">Explored List</button>
+      </form>
+      <form action="/add-to-unexplored/{{this._id}}" method="post">
+        <input type="hidden" name="cityId" value="{{this._id}}">
+        <button class="unexplore-button" onclick="">Unexplored List</button>
+      </form>
+    </div>
     {{else}}
-      <p>No cities found. Please enter one of the cities from the list above.</p>
+    <p class="other-search">No cities found. Please enter one of the cities from the list above.</p>
     {{/if}}
-  {{else}}
-    <p>Enter city name to search!</p>
-  {{/if}}
-  </main>
+    {{else}}
+    <p class="other-search">Enter city name to search!</p>
+    {{/if}}
+</main>

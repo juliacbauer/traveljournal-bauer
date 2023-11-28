@@ -30,18 +30,20 @@ router.get("/about", checkAuth, ({ session: { isLoggedIn } }, res) => {
 //Make search page
 router.get("/search", checkAuth, async (req, res) => {
   try {
-    //Get the search query
-    let query = req.query.city;
-    //Get inspiring quote
+    //Search parameter
+    const query = req.query.city;
     const oneQuote = await controllers.quote.inspireQuote();
-    //Get city based on search
     let cities = [];
+    //Get city info
     if (query) {
       cities = await City.find({ name: { $regex: new RegExp(query, 'i') } }).lean();
+      //Get weather info
+      const weatherData = await controllers.weather.getWeather(query);
+      //Render page
+      res.render("search", { isLoggedIn: req.session.isLoggedIn, oneQuote, query, cities, weather: weatherData });
     } else {
-      cities = await City.find().lean();
+      res.render("search", { isLoggedIn: req.session.isLoggedIn, oneQuote, query, cities });
     }
-    res.render("search", { isLoggedIn: req.session.isLoggedIn, oneQuote, query, cities });
   } catch (error) {
     console.error("Error fetching data:", error);
     res.render("error", { message: "Failed to fetch data" });

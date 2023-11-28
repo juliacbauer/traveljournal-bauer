@@ -41,7 +41,7 @@ async function insertCities() {
         attraction5: "The Metropolitan Museum of Art (The Met)", 
         tip: "Don't be afraid to use public transportation. It is affordable, and you will get a true taste of city life!",
       },
-      { name: "Honululu", 
+      { name: "Honolulu", 
         state: "Hawaii", 
         description: "Honululu is on the Island of Oahu and is home to some of the most beautiful beaches ever, including Waikiki, Lanikai and Punaluu. You can also see amazing colorful fish and coral reefs at Hanauma Bay and Diamond Head Volcano!", 
         attraction1: "Diamond Head State Monument",

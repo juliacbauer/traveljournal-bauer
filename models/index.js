@@ -3,5 +3,5 @@ const City = require("./City");
 
 module.exports = 
 { User,
-City };
+City,};
 
