@@ -42,7 +42,7 @@ router.get("/search", checkAuth, async (req, res) => {
       //Render page
       res.render("search", { isLoggedIn: req.session.isLoggedIn, oneQuote, query, cities, weather: weatherData });
     } else {
-      res.render("search", { isLoggedIn: req.session.isLoggedIn, oneQuote, query, cities });
+      res.render("search", { isLoggedIn: req.session.isLoggedIn, oneQuote });
     }
   } catch (error) {
     console.error("Error fetching data:", error);
