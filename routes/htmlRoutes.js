@@ -32,7 +32,6 @@ router.get("/search", checkAuth, async (req, res) => {
   try {
     //Search parameter
     const query = req.query.city;
-    const oneQuote = await controllers.quote.inspireQuote();
     let cities = [];
     //Get city info
     if (query) {
@@ -40,9 +39,9 @@ router.get("/search", checkAuth, async (req, res) => {
       //Get weather info
       const weatherData = await controllers.weather.getWeather(query);
       //Render page
-      res.render("search", { isLoggedIn: req.session.isLoggedIn, oneQuote, query, cities, weather: weatherData });
+      res.render("search", { isLoggedIn: req.session.isLoggedIn, query, cities, weather: weatherData });
     } else {
-      res.render("search", { isLoggedIn: req.session.isLoggedIn, oneQuote });
+      res.render("search", { isLoggedIn: req.session.isLoggedIn });
     }
   } catch (error) {
     console.error("Error fetching data:", error);
