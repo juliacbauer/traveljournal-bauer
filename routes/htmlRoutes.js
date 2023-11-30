@@ -45,7 +45,7 @@ router.get("/search", checkAuth, async (req, res) => {
     }
   } catch (error) {
     console.error("Error fetching data:", error);
-    res.render("error", { message: "Failed to fetch data" });
+    res.render("search", err.message);
   }
 });
 

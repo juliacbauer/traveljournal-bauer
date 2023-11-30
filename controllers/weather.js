@@ -10,7 +10,9 @@ async function getWeather(city) {
     return response.data;
   } catch (error) {
     console.error(error);
-    throw new Error('Error fetching weather data');
+    //Fixes the error rendering the page is search value 
+    //does not match the City.find
+    return null;
   }
 }
 

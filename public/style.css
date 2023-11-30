@@ -9,6 +9,7 @@
   --text-color: #f5fffe;
   --space: 16px;
   --font-size: 18px;
+  --font-weight: 70;
 }
 
 body {
@@ -22,6 +23,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-weight: var(--font-weight);
 }
 
 main {
@@ -42,12 +44,18 @@ main form {
 
 h1 {
   font-size: calc(var(--font-size) * 2.25);
+  font-weight: 700;
+  letter-spacing: 1.5px;
 }
 h2 {
   font-size: calc(var(--font-size) * 2);
+  font-weight: 700;
+  letter-spacing: 1.5px;
 }
 h3 {
   font-size: calc(var(--font-size) * 1.5);
+  font-weight: 700;
+  letter-spacing: 1.5px;
 }
 
 a {
@@ -99,6 +107,8 @@ header .site-logo {
   font-size: calc(var(--font-size) * 1.5);
   margin: var(--space);
   margin-right: auto;
+  letter-spacing: 1.5px;
+  font-weight: 700;
 }
 
 .site-logo {
@@ -353,4 +363,11 @@ padding-bottom: 20px
   .other-search {
     margin-left: 35%;
   }
+}
+
+.resize-about {
+  font-size: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 20px;
 }

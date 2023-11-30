@@ -48,8 +48,45 @@
             <p class="info-tip">Tip! {{this.tip}}</p>
           </div>
         </div>
-      {{/each}}
         </div>
+    <p class="button-paragraph">Add this city to your Explored List or Unexplored List using the buttons below!</p>
+    <div class="result-buttons">
+      <form action="/explored" method="GET"
+      //Will change the action, needs to be POST not GET and different action
+      //Just wanted a functioning button for now>
+        <input type="hidden">
+        <button data-id="{{this._id}}" 
+                data-name="{{this.name}}" 
+                data-state="{{this.state}}"
+                data-description="{{this.description}}"
+                data-attractions="{{this.attraction1}}","{{this.attraction2}}","{{this.attraction3}}","{{this.attraction4}}","{{this.attraction5}}"
+                data-tip="{{this.tip}}"
+                class="explore-button"
+                >Explored List
+        </button>
+      </form>
+      <form action="/unexplored" method="GET"
+      //Will change the action, needs to be POST not GET and different action
+      //Just wanted a functioning button for now>
+        <input type="hidden">
+        <button data-id="{{this._id}}" 
+                data-name="{{this.name}}" 
+                data-state="{{this.state}}"
+                data-description="{{this.description}}"
+                data-attractions="{{this.attraction1}}","{{this.attraction2}}","{{this.attraction3}}","{{this.attraction4}}","{{this.attraction5}}"
+                data-tip="{{this.tip}}"
+                class="unexplore-button"
+                >Unexplored List
+        </button>
+      </form>
+    </div>
+    {{/each}}
+    {{else}}
+    <p class="other-search">No cities found. Please enter one of the cities from the list above.</p>
+    {{/if}}
+    {{else}}
+    <p class="other-search">Enter city name to search!</p>
+    {{/if}}
       </div>
     <div class="weather-info">
       {{#if weather}}
@@ -67,21 +104,51 @@
       {{/if}}
       </div>
     </div>
-    <p class="button-paragraph">Add this city to your Explored List or Unexplored List using the buttons below!</p>
-    <div class="result-buttons">
-      <form action="/add-to-explored/{{this._id}}" method="post">
-        <input type="hidden" name="cityId" value="{{this._id}}">
-        <button class="explore-button" onclick="">Explored List</button>
-      </form>
-      <form action="/add-to-unexplored/{{this._id}}" method="post">
-        <input type="hidden" name="cityId" value="{{this._id}}">
-        <button class="unexplore-button" onclick="">Unexplored List</button>
-      </form>
-    </div>
-    {{else}}
-    <p class="other-search">No cities found. Please enter one of the cities from the list above.</p>
-    {{/if}}
-    {{else}}
-    <p class="other-search">Enter city name to search!</p>
-    {{/if}}
 </main>
+
+<script>
+  //Making sure I target the right page
+  console.log("hello")
+  //Function for explore button on click
+  document.querySelectorAll(".explore-button").forEach(btn => {
+    btn.onclick = function(e) {
+    console.log(e.target)
+    //Getting all the city info
+    const cityInfo = {
+    id: e.target.dataset.id,
+    name: e.target.dataset.name,
+    state: e.target.dataset.state,
+    description: e.target.dataset.description,
+    attractions: e.target.dataset.attractions.split(","),
+    tip: e.target.dataset.tip
+    };
+    //Console log to check
+    console.log(cityInfo)
+    //Stuck on the rest of this
+    //Need a route to post the data to the user's list
+    //It should update the users list 
+     //const response = await fetch(`/...`)
+    }
+  })
+  //Function for unexplore button on click
+  document.querySelectorAll(".unexplore-button").forEach(btn => {
+    btn.onclick = function(e) {
+    console.log(e.target)
+    //Getting all the city info
+    const cityInfo = {
+    id: e.target.dataset.id,
+    name: e.target.dataset.name,
+    state: e.target.dataset.state,
+    description: e.target.dataset.description,
+    attractions: e.target.dataset.attractions.split(","),
+    tip: e.target.dataset.tip
+    };
+    //Console log to check
+    console.log(cityInfo)
+    //Stuck on the rest of this
+    //Need a route to post the data to the user's list
+    //It should update the users list 
+     //const response = await fetch(`/...`)
+    }
+  })
+</script>

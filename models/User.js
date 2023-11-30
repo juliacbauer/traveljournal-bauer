@@ -14,6 +14,22 @@ const UserSchema = new Schema(
       minLength: 5,
       maxLength: 20,
     },
+    //Adding to schema so explored list data
+    //can associate with user data
+    explored: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'City'
+      }
+    ],
+    //Adding to schema so unexplored list data
+    //can associate with user data
+    unexplored: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'City'
+      }
+    ]
   },
   {
     methods: {
