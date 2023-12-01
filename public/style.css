@@ -354,10 +354,19 @@ padding-bottom: 20px
 
 @media screen and (max-width: 650px) {
   .home-gif, .about-gif {
-    max-width: 300px;
+    max-width: 270px; 
+    margin-top: -40px;
   }
   .resize-about {
     padding-left: 10px;
     padding-right: 10px;
+  }
+
+  .giflink1 {
+    margin-top: -100px;
+  }
+
+  .giflink2 {
+    margin-top: -70px
   }
 }
