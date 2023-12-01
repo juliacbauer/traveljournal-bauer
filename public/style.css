@@ -356,4 +356,8 @@ padding-bottom: 20px
   .home-gif, .about-gif {
     max-width: 300px;
   }
+  .resize-about {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
