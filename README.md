@@ -9,6 +9,7 @@ It is designed for people who have little travel experience but want to start ex
 
 <img width="1016" alt="Screenshot 2023-12-01 at 11 04 56 AM" src="https://github.com/juliacbauer/traveljournal-bauer/assets/122422145/203ff271-ce7d-457f-a3d9-52bba32c933c">
 
+<img width="984" alt="Screenshot 2023-12-01 at 11 05 39 AM" src="https://github.com/juliacbauer/traveljournal-bauer/assets/122422145/47a3faf5-293c-45d4-9777-17b642e9eb40">
 
 After a user searches for information about a city, they can add it to their favorites list if they want to travel there. 
 
