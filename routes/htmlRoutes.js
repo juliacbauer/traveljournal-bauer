@@ -2,6 +2,7 @@ const router = require("express").Router();
 const controllers = require("../controllers");
 const checkAuth = require("../middleware/auth");
 const City = require('../models/City');
+const { User } = require('../models')
 
 
 router.get("/", ({ session: { isLoggedIn } }, res) => {
@@ -49,9 +50,41 @@ router.get("/search", checkAuth, async (req, res) => {
   }
 });
 
-//Make unexplored page
+//Make favorites page
 router.get("/favorites", checkAuth, ({ session: { isLoggedIn } }, res) => {
   res.render("favorites", { isLoggedIn });
 });
+
+//Create route to post city to favorites, 
+//still couldn't figure this out
+//Says user ID undefined, but
+//when I have /favorites/:id it says
+//internal server error
+router.post("/favorites", async (req, res) => {
+  try {
+    //From handlebars js
+    const { cityInfo } = req.body;
+    //Finding user... think this is the issue
+    const user = await User.findOne({ _id: req.params.id });
+    console.log(req.params.id);
+    if (!user) {
+      return res.status(404).json({ error: "User not found'" });
+    }
+    //Push the city info data to the favorites in user
+    user.favorites.push(cityInfo);
+    //Update and save it to the user
+    await user.save();
+    res.status(200).json({ message: "City added to favorites successfully" });
+  } catch (err) {
+    console.error("Error adding city to favorites" + err.message);
+    res.status(500).json( err.message );
+  }
+});
+
+//Delete route, couldn't get to this
+//because add to favorites didn't work
+router.delete("/favorites", async (req, res) => {
+
+})
 
 module.exports = router;

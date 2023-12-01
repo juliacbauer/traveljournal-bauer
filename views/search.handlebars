@@ -49,10 +49,13 @@
           </div>
         </div>
         </div>
-      <form action="/favorites" method="GET"
-      //Will change the action, needs to be POST not GET and different action
-      //Just wanted a functioning button for now>
-        <input type="hidden">
+      <form action="/favorites" method="POST">
+        <input type="hidden" name="id" value="{{this._id}}">
+        <input type="hidden" name="name" value="{{this.name}}">
+        <input type="hidden" name="state" value="{{this.state}}">
+        <input type="hidden" name="description" value="{{this.description}}">
+        <input type="hidden" name="attractions" value="{{this.attraction1}}","{{this.attraction2}}","{{this.attraction3}}","{{this.attraction4}}","{{this.attraction5}}">
+        <input type="hidden" name="tip" value="{{this.tip}}">
         <button data-id="{{this._id}}" 
                 data-name="{{this.name}}" 
                 data-state="{{this.state}}"
@@ -108,9 +111,13 @@
     //Console log to check
     console.log(cityInfo)
     //Stuck on the rest of this
-    //Need a route to post the data to the user's list
+    //Don't think I need it since I am doing a form and
+    //a POST in the htmlroutes, but
     //It should update the users list 
-     //const response = await fetch(`/...`)
-    }
+    //const response = await fetch(`/favorites/${e.target.dataset.id}`,{
+    //method: 'POST'
+    //})
+    //if (response.status === 200) location.reload()
+  }
   })
 </script>

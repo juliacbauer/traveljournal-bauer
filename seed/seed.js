@@ -17,8 +17,9 @@ const { User, City } = require("../models");
 const { connection } = require("../config/connection");
 
 connection.once("open", async function () {
-  // insert a sample user
+  // insert a sample user, keeping for test account
   await User.create({ username: "banana", password: "meatloaf" });
+  //insert cities
   await insertCities();
   connection.close();
 

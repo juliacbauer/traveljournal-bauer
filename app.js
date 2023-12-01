@@ -41,4 +41,16 @@ app.use(express.static("./public"));
 app.use("/api", apiRoutes);
 app.use("/", htmlRoutes);
 
+//Testing accessing user data
+const { User } = require('./models')
+//Shows banana meatloaf when logged in
+app.get("/user", async (req, res) => {
+  try {
+    const users = await User.find()
+    res.json(users)
+  } catch (err) {
+    res.status(500).send("Error" + err.message)
+  }
+})
+
 module.exports = app;
