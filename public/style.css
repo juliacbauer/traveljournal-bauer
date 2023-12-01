@@ -351,3 +351,9 @@ padding-bottom: 20px
   padding-right: 50px;
   padding-top: 20px;
 }
+
+@media screen and (max-width: 650px) {
+  .home-gif, .about-gif {
+    max-width: 300px;
+  }
+}
