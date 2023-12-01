@@ -13,20 +13,18 @@ if (process.env.MONGODB_URI) {
   console.log("\x1b[33m%s\x1b[0m", "SEEDING MONGODB LOCAL DB");
 }
 
-const { User } = require("../models");
+const { User, City } = require("../models");
 const { connection } = require("../config/connection");
 
 connection.once("open", async function () {
   // insert a sample user
   await User.create({ username: "banana", password: "meatloaf" });
-
+  await insertCities();
   connection.close();
 
 });
 
 //Create city database to seed the app
-const City  = require('../models/City');
-
 //Function to seed city info
 async function insertCities() {
   try {
@@ -134,11 +132,7 @@ async function insertCities() {
     ];
     await City.insertMany(cities);
     console.log('Cities inserted successfully');
-    mongoose.connection.close();
   } catch (err) {
     console.error('Error inserting cities:', err);
   }
 }
-
-//Run function
-insertCities();

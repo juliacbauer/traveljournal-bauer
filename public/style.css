@@ -183,7 +183,7 @@ header .site-logo {
 }
 
 /*Style search page buttons*/
-.search-button, .explore-button, .unexplore-button {
+.search-button, .favorites-button {
   padding: 6px 11px 6px 11px;
   background-color: var(--secondary-light);
   transition: .5s;
@@ -192,20 +192,13 @@ header .site-logo {
   margin-left: 5px
 }
 
-.explore-button {
+.favorites-button {
   padding: 6px 19px 6px 19px;
-}
-
-.explore-button {
-  margin-bottom: 30px;
-}
-
-.unexplore-button {
   margin-bottom: 30px;
 }
 
 /*Search button hover*/
-.search-button:hover, .explore-button:hover, .unexplore-button:hover {
+.search-button:hover, .favorites-button:hover {
   background-color: var(--secondary);
   transition: .5s;
   cursor: pointer
@@ -277,19 +270,6 @@ padding-bottom: 20px
 .center-list {
   text-align: left;
   list-style-position: inside;
-}
-
-/*Text above button*/
-.button-paragraph {
-  margin-top: 20px;
-}
-
-/*Button placement*/
-.result-buttons {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-  gap: 80px
 }
 
 /*Container for all results*/

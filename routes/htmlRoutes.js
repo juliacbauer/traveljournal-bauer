@@ -49,14 +49,9 @@ router.get("/search", checkAuth, async (req, res) => {
   }
 });
 
-//Make explored page
-router.get("/explored", checkAuth, ({ session: { isLoggedIn } }, res) => {
-  res.render("explored", { isLoggedIn });
-});
-
 //Make unexplored page
-router.get("/unexplored", checkAuth, ({ session: { isLoggedIn } }, res) => {
-  res.render("unexplored", { isLoggedIn });
+router.get("/favorites", checkAuth, ({ session: { isLoggedIn } }, res) => {
+  res.render("favorites", { isLoggedIn });
 });
 
 module.exports = router;
